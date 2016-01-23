@@ -5,6 +5,7 @@ namespace netrivet\milestones;
 use Github\Client;
 
 require_once __DIR__ . '/../src/hooks.php';
+require_once __DIR__ . '/../src/cache.php';
 require_once __DIR__ . '/../src/github/github.php';
 
 request(function(array $request, Client $client, Repository $repo) {
