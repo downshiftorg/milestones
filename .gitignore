@@ -1,0 +1,4 @@
+vendor/**/tests
+vendor/**/Tests
+vendor/**/docs
+vendor/**/phing

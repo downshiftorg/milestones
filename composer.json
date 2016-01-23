@@ -1,0 +1,18 @@
+{
+    "name": "netrivet/milestones",
+    "description": "A WordPress plugin for displaying milestones in a GitHub repository",
+    "type": "plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Scaturro",
+            "email": "scaturrob@gmail.com"
+        }
+    ],
+    "require": {
+        "knplabs/github-api": "1.5.1"
+    },
+    "autoload": {
+      "files": []
+    }
+}
