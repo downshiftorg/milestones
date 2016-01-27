@@ -30,3 +30,13 @@ function authenticate_client(Client $client, $token) {
     $client->authenticate($token, null, Client::AUTH_HTTP_TOKEN);
     return $client;
 }
+
+/**
+ * Returns an authenticated client using the stored access token
+ *
+ * @return Client
+ */
+function authenticated_client() {
+    $client = github_client();
+    return authenticate_client($client, get_option('ms_github_access_token'));
+}

@@ -5,7 +5,7 @@ Display GitHub milestones on your blog!
 ## Usage
 
 Look up creating a [personal API token](https://github.com/blog/1509-personal-api-tokens) for GitHub. Insert this token
-into the appropriate option on line 13 of `plugin.php`.
+into the appropriate field on the Milestones settings page.
 
 Then use the `milestones` shortcode like so:
 
@@ -46,5 +46,4 @@ add_filter('milestones_template', function ($url) {
 
 ## Todo
 
-* Settings page (manage GitHub token)
 * Maybe some fancier defaults

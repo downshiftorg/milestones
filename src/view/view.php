@@ -17,7 +17,7 @@ function shortcode($atts) {
 	], $atts);
 
 	$repository = new Repository($attributes['user'], $attributes['repository']);
-	$client = authenticate_client(github_client(), get_option('milestones_github_token'));
+	$client = authenticated_client();
 
 	$data = apply_filters('milestones_request', array(), $client, $repository);
 	do_action('milestones_shortcode');

@@ -13,6 +13,20 @@ function cache_key(Repository $repo) {
 }
 
 /**
+ * Generate a cache key for the repository and return it
+ *
+ * @param Repository $repo
+ * @return string
+ */
+function cache_repository_key(Repository $repo) {
+    $key = cache_key($repo);
+    $cached = get_repository_key_cache();
+    $cached["{$repo->user}/{$repo->name}"] = $key;
+    set_transient('ms_cached_repos', $cached, DAY_IN_SECONDS);
+    return $key;
+}
+
+/**
  * Cache repo data
  *
  * @param array $data
@@ -20,7 +34,7 @@ function cache_key(Repository $repo) {
  * @return bool
  */
 function cache_result(array $data, Repository $repo) {
-    $key = cache_key($repo);
+    $key = cache_repository_key($repo);
     return set_transient($key, json_encode($data), DAY_IN_SECONDS);
 }
 
@@ -37,4 +51,30 @@ function get_cache(Repository $repo) {
         return json_decode($data, true);
     }
     return false;
+}
+
+/**
+ * Get the cache keys for all repositories
+ *
+ * @return array|mixed
+ */
+function get_repository_key_cache() {
+    $cached = get_transient('ms_cached_repos');
+
+    if ($cached === false) {
+        $cached = [];
+    }
+
+    return $cached;
+}
+
+/**
+ * Clear cached GitHub repositories
+ */
+function clear_cache() {
+    $cached = get_option('ms_cached_repos', array());
+    foreach ($cached as $name => $key) {
+        delete_transient($key);
+    }
+    delete_transient('ms_cached_repos');
 }
