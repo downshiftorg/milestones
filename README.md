@@ -39,7 +39,7 @@ add_filter('milestones_template', function ($template) {
 This filter lets you replace the CSS loaded for styling milestones:
 
 ```php
-add_filter('milestones_template', function ($url) {
+add_filter('milestones_list_milestones_css', function ($url) {
     return 'http://url/to/other.css';
 });
 ```
