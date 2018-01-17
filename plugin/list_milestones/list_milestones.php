@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../src/view/view.php';
 /**
  * Shortcode
  */
-add_shortcode('milestones', 'netrivet\milestones\shortcode');
+add_shortcode('milestones', 'downshift\milestones\shortcode');
 
 /**
  * CSS

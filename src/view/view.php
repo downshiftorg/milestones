@@ -1,6 +1,6 @@
 <?php
 
-namespace netrivet\milestones;
+namespace downshift\milestones;
 
 require_once __DIR__ . '/../github/github.php';
 
@@ -12,7 +12,7 @@ require_once __DIR__ . '/../github/github.php';
  */
 function shortcode($atts) {
 	$attributes = shortcode_atts([
-		'user' => 'netrivet',
+		'user' => 'downshift',
 		'repository' => 'prophoto-issues'
 	], $atts);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace netrivet\milestones;
+namespace downshift\milestones;
 
 use Github\Client;
 
@@ -18,7 +18,7 @@ function get_milestones(Client $client, Repository $repo) {
         'sort' => 'due_on',
         'direction' => 'asc'
     ));
-    return array_filter($milestones, 'netrivet\milestones\milestone_is_open');
+    return array_filter($milestones, 'downshift\milestones\milestone_is_open');
 }
 
 /**

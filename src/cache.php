@@ -1,6 +1,6 @@
 <?php
 
-namespace netrivet\milestones;
+namespace downshift\milestones;
 
 /**
  * Get the cache key for a repository

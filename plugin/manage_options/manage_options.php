@@ -1,6 +1,6 @@
 <?php
 
-namespace netrivet\milestones;
+namespace downshift\milestones;
 
 require_once __DIR__ . '/../../src/cache.php';
 
@@ -21,7 +21,7 @@ function admin_menu() {
         'Milestones',
         'manage_options',
         'milestones',
-        'netrivet\milestones\options_page'
+        'downshift\milestones\options_page'
     );
 }
 
@@ -51,7 +51,7 @@ function register_settings() {
     add_settings_field(
         'ms_github_access_token',
         'GitHub API Access Token',
-        'netrivet\milestones\github_token_input',
+        'downshift\milestones\github_token_input',
         'milestones',
         'ms_github_settings_section',
         ['label_for' => 'ms_github_token']
@@ -73,6 +73,6 @@ function handle_clear_cache() {
     clear_cache();
 }
 
-add_action('admin_menu', 'netrivet\milestones\admin_menu');
-add_action('admin_init', 'netrivet\milestones\register_settings');
-add_action('admin_init', 'netrivet\milestones\handle_clear_cache');
+add_action('admin_menu', 'downshift\milestones\admin_menu');
+add_action('admin_init', 'downshift\milestones\register_settings');
+add_action('admin_init', 'downshift\milestones\handle_clear_cache');

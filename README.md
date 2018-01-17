@@ -10,7 +10,7 @@ into the appropriate field on the Milestones settings page.
 Then use the `milestones` shortcode like so:
 
 ```
-[milestones user="netrivet" repository="prophoto-issues"]
+[milestones user="downshift" repository="prophoto-issues"]
 ```
 
 Voilà! You will have milestones sorted by due date with their issues grouped underneath.

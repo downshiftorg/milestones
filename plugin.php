@@ -3,7 +3,7 @@
  * Main plugin/application file for milestones
  */
 
-namespace netrivet\milestones;
+namespace downshift\milestones;
 
 require_once 'plugin/api.php';
 require_once 'plugin/model.php';

@@ -1,6 +1,6 @@
 <?php
 
-namespace netrivet\milestones;
+namespace downshift\milestones;
 
 use Github\HttpClient\Cache\CacheInterface;
 use Guzzle\Http\Message\Response;
